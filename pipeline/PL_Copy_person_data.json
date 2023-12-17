@@ -91,11 +91,6 @@
 				"defaultValue": "person"
 			}
 		},
-		"variables": {
-			"person_file_name": {
-				"type": "String"
-			}
-		},
 		"annotations": []
 	}
 }
