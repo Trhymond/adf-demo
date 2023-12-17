@@ -1,0 +1,50 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "source1",
+					"value": {
+						"value": "@pipeline().globalParameters.source_data_name",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Set variable2",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "target1",
+					"value": {
+						"value": "@pipeline().globalParameters.target_data_name",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"source1": {
+				"type": "String"
+			},
+			"target1": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
