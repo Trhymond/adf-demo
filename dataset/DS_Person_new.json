@@ -5,11 +5,21 @@
 			"referenceName": "LS_Storage_Blob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"new_file_prefix": {
+				"type": "string",
+				"defaultValue": "person"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(dataset().new_file_prefix, utcnow(), '.csv')",
+					"type": "Expression"
+				},
 				"container": "target"
 			},
 			"columnDelimiter": ",",
