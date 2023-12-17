@@ -3,45 +3,66 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Set variable1",
-				"type": "SetVariable",
+				"name": "Copy data1",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "source1",
-					"value": {
-						"value": "@pipeline().globalParameters.source_data_name",
-						"type": "Expression"
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
 					}
-				}
-			},
-			{
-				"name": "Set variable2",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
 				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "target1",
-					"value": {
-						"value": "@pipeline().globalParameters.target_data_name",
-						"type": "Expression"
+				"inputs": [
+					{
+						"referenceName": "DS_Person",
+						"type": "DatasetReference"
 					}
-				}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Person_Copy",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
-			"source1": {
-				"type": "String"
-			},
-			"target1": {
+			"new_file_name": {
 				"type": "String"
 			}
 		},
