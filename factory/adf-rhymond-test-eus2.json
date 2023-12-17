@@ -5,6 +5,10 @@
 			"person_new_file_prefix": {
 				"type": "string",
 				"value": "person"
+			},
+			"web_host": {
+				"type": "string",
+				"value": "cat-fact.herokuapp.com"
 			}
 		},
 		"globalConfigurations": {
