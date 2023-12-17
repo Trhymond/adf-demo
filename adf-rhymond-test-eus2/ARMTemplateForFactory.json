@@ -14,6 +14,10 @@
 		"default_properties_person_new_file_prefix_value": {
 			"type": "string",
 			"defaultValue": "person"
+		},
+		"default_properties_web_host_value": {
+			"type": "string",
+			"defaultValue": "cat-fact.herokuapp.com"
 		}
 	},
 	"variables": {
@@ -85,6 +89,34 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Web1",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Copy data1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": {
+								"value": "@concat('https://',pipeline().globalParameters.web_host, '/facts/')",
+								"type": "Expression"
+							},
+							"method": "GET",
+							"headers": {}
+						}
 					}
 				],
 				"policy": {
@@ -239,6 +271,10 @@
 				"person_new_file_prefix": {
 					"type": "string",
 					"value": "[parameters('default_properties_person_new_file_prefix_value')]"
+				},
+				"web_host": {
+					"type": "string",
+					"value": "[parameters('default_properties_web_host_value')]"
 				}
 			},
 			"dependsOn": []

@@ -10,6 +10,9 @@
 		},
 		"default_properties_person_new_file_prefix_value": {
 			"value": "person"
+		},
+		"default_properties_web_host_value": {
+			"value": "cat-fact.herokuapp.com"
 		}
 	}
 }
