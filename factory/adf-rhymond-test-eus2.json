@@ -5,6 +5,10 @@
 			"source_data_name": {
 				"type": "string",
 				"value": "test1234"
+			},
+			"target_data_name": {
+				"type": "string",
+				"value": "test97021"
 			}
 		}
 	},
