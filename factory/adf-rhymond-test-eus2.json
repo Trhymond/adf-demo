@@ -2,13 +2,9 @@
 	"name": "adf-rhymond-test-eus2",
 	"properties": {
 		"globalParameters": {
-			"source_data_name": {
+			"person_copy_file_name": {
 				"type": "string",
-				"value": "test1234"
-			},
-			"target_data_name": {
-				"type": "string",
-				"value": "test97021"
+				"value": "person_test"
 			}
 		}
 	},
