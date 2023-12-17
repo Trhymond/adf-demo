@@ -10,6 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat('person_', utcnow(), '.csv')",
+					"type": "Expression"
+				},
 				"container": "target"
 			},
 			"columnDelimiter": ",",
