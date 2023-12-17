@@ -132,13 +132,19 @@
 					"referenceName": "LS_Storage_Blob",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"new_file_prefix": {
+						"type": "string",
+						"defaultValue": "person"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@concat('person_', utcnow(), '.csv')",
+							"value": "@concat(dataset().new_file_prefix, utcnow(), '.csv')",
 							"type": "Expression"
 						},
 						"container": "target"
@@ -223,6 +229,12 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"new_file_prefix": {
+						"type": "string",
+						"defaultValue": "person"
+					}
 				},
 				"annotations": []
 			},
