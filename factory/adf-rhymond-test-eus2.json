@@ -6,6 +6,9 @@
 				"type": "string",
 				"value": "person"
 			}
+		},
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
 		}
 	},
 	"location": "eastus2",
