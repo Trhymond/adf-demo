@@ -1,5 +1,13 @@
 {
 	"name": "adf-rhymond-test-eus2",
+	"properties": {
+		"globalParameters": {
+			"source_data_name": {
+				"type": "string",
+				"value": "test1234"
+			}
+		}
+	},
 	"location": "eastus2",
 	"identity": {
 		"type": "SystemAssigned",
