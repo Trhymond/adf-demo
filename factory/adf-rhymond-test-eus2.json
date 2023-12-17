@@ -1,5 +1,13 @@
 {
 	"name": "adf-rhymond-test-eus2",
+	"properties": {
+		"globalParameters": {
+			"person_new_file_prefix": {
+				"type": "string",
+				"value": "person"
+			}
+		}
+	},
 	"location": "eastus2",
 	"identity": {
 		"type": "SystemAssigned",
