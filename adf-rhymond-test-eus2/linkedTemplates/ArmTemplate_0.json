@@ -230,7 +230,9 @@
 							{
 								"referenceName": "DS_Person_new",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"new_file_prefix": "person"
+								}
 							}
 						]
 					},
