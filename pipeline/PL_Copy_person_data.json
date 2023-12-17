@@ -56,7 +56,10 @@
 				"outputs": [
 					{
 						"referenceName": "DS_Person_new",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"new_file_prefix": "person"
+						}
 					}
 				]
 			},
