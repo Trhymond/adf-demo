@@ -80,7 +80,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"url": "https://cat-fact.herokuapp.com/facts/",
+					"url": {
+						"value": "@concat('https://',pipeline().globalParameters.web_host, '/facts/')",
+						"type": "Expression"
+					},
 					"method": "GET"
 				}
 			}
