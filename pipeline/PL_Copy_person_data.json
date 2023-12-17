@@ -59,8 +59,27 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "person_file_name",
+					"value": ""
+				}
 			}
 		],
+		"variables": {
+			"person_file_name": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
