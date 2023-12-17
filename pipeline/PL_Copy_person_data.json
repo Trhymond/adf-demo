@@ -85,6 +85,12 @@
 				}
 			}
 		],
+		"parameters": {
+			"new_file_prefix": {
+				"type": "string",
+				"defaultValue": "person"
+			}
+		},
 		"variables": {
 			"person_file_name": {
 				"type": "String"
