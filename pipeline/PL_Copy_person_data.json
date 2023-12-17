@@ -5,7 +5,14 @@
 			{
 				"name": "Copy data1",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -71,7 +78,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "person_file_name",
-					"value": ""
+					"value": {
+						"value": "@pipeline().globalParameters.person_new_file_prefix",
+						"type": "Expression"
+					}
 				}
 			}
 		],
