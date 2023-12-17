@@ -1,1 +1,6 @@
-{}
+{
+	"person_new_file_prefix": {
+		"type": "string",
+		"value": "person"
+	}
+}
