@@ -78,7 +78,11 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://cat-fact.herokuapp.com/facts/",
+					"method": "GET"
+				}
 			}
 		],
 		"parameters": {
