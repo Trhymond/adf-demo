@@ -1,0 +1,9 @@
+{
+	"name": "adf-rhymond-test-eus2",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "83f7c641-67fa-4a1a-b8bb-5116a11a6d54",
+		"tenantId": "5442ca0b-f9d4-4e2e-928c-9dece8de7014"
+	}
+}
